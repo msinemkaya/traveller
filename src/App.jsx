@@ -1,14 +1,15 @@
 import './App.css'
-import { Login } from './components/sections/Login.jsx'
-import { Register } from './components/sections/Register.jsx'
+import { Route, Routes } from 'react-router-dom'
+import { Layout } from './components/layout/Layout.jsx'
 
 function App() {
 
   return (
-    <>
-      <Login/>
-      <Register/>
-    </>
+    <Routes>
+      <Route path='/' element={<Layout/>}>
+
+      </Route>
+    </Routes>
   )
 }
 
