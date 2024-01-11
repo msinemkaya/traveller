@@ -5,6 +5,7 @@ import { Login } from './components/sections/Login.jsx'
 import { Register } from './components/sections/Register.jsx'
 import { NoPage } from './components/layout/NoPage.jsx'
 import { Main } from './components/layout/Main.jsx'
+import { RequireAuth } from './components/common/RequireAuth.jsx'
 
 function App() {
 
@@ -12,7 +13,9 @@ function App() {
     <Routes>
       <Route path='/' element={<Layout/>}>
         <Route path='/' element={<Main/>}/>
-        {/*todo: post routes*/}
+        <Route element={<RequireAuth/>}>
+          {/*todo: post routes*/}
+        </Route>
       </Route>
       <Route path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register/>}/>
