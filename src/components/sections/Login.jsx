@@ -4,9 +4,20 @@ import { BlurCard } from '../common/BlurCard.jsx'
 import { AuthForm } from '../layout/AuthForm.jsx'
 import { Input } from '../common/Input.jsx'
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 export function Login() {
   const { setAuth } = useAuth()
+
+  const [user, setUser] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setAuth({ user, password })
+    setUser('')
+    setPassword('')
+  }
 
   return (
     <div className='auth grid place-items-center relative overflow-hidden'>
@@ -20,9 +31,9 @@ export function Login() {
         <div className='basis-3/5 px-2'>
           <img src={woman} alt='woman dreaming about travelling'/>
         </div>
-        <AuthForm title='sign in' buttonText='sign in'>
-          <Input type='text' placeholder='username'/>
-          <Input type='password' placeholder='password'/>
+        <AuthForm title='sign in' buttonText='sign in' onSubmit={handleSubmit}>
+          <Input type='text' placeholder='username' onChange={({target}) => setUser(target.value)} value={user} required/>
+          <Input type='password' placeholder='password' onChange={({target}) => setPassword(target.value)} value={password} required/>
           <Link className='text-xs font-medium capitalize inline-block' to='/reset'>
             forgot your password?
           </Link>
