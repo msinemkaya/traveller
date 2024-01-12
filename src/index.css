@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {font-family:"JK Abode Light Demo";src:url("assets/font/JKAbode-LightDemo.eot?") format("eot"),url("assets/font/JKAbode-LightDemo.woff") format("woff"),url("assets/font/JKAbode-LightDemo.ttf") format("truetype"),url("assets/font/JKAbode-LightDemo.svg#JKAbode-LightDemo") format("svg");}
 
 #root {
-    @apply min-h-svh p-0
+    @apply min-h-svh p-0 m-0 font-monserrat bg-dark/70 min-w-full text-primary
 }
+
+.auth {
+    height: 100svh;
+    width: 100vw;
+}
+
