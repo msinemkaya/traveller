@@ -1,12 +1,9 @@
-import { Button } from './Button.jsx'
-
-export function Form({ children, buttonText, ...rest }) {
+export function Form({ children, ...rest }) {
   return (
-    <form className='w-80 mx-auto flex flex-col gap-8 items-center' {...rest}>
-      <div className='w-full space-y-5 text-center'>
+    <form className='w-80 mx-auto' {...rest}>
+      <div className='space-y-5 text-center'>
         {children}
       </div>
-      <Button>{buttonText}</Button>
     </form>
   )
 }

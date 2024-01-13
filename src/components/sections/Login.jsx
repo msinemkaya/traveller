@@ -1,10 +1,12 @@
 import useAuth from '../../hooks/use-auth.js'
 import woman from '../../assets/woman.svg'
-import { BlurCard } from '../common/BlurCard.jsx'
-import { AuthForm } from '../layout/AuthForm.jsx'
 import { Input } from '../common/Input.jsx'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
+import { GiPostStamp, GiUnlocking } from "react-icons/gi";
+import { SocialBox } from '../common/SocialBox.jsx'
+import { Auth } from './Auth.jsx'
+import { Button } from '../common/Button.jsx'
 
 export function Login() {
   const { setAuth } = useAuth()
@@ -20,26 +22,17 @@ export function Login() {
   }
 
   return (
-    <div className='auth grid place-items-center relative overflow-hidden'>
-      {/*<img src={balls} alt='' className='absolute -top-48 left-4 w-[30rem] rotate-45'/>*/}
-      {/*<img src={balls} alt='' className='absolute right-1/3 -top-20 rotate-12 w-64'/>*/}
-      {/*<img src={balls} alt='' className='absolute bottom-0 -right-32 rotate-45 w-[30rem]'/>*/}
-      {/*<img src={balls} alt='' className='absolute top-8 right-44 -rotate-90'/>*/}
-      {/*<img src={balls} alt='' className='absolute left-1/2 bottom-0'/>*/}
-      {/*<img src={balls} alt='' className='absolute -left-40 -bottom-40 rotate-180 w-[35rem]'/>*/}
-      <BlurCard>
-        <div className='basis-3/5 px-2'>
-          <img src={woman} alt='woman dreaming about travelling'/>
-        </div>
-        <AuthForm title='sign in' buttonText='sign in' onSubmit={handleSubmit}>
-          <Input type='text' placeholder='username' onChange={({target}) => setUser(target.value)} value={user} required/>
-          <Input type='password' placeholder='password' onChange={({target}) => setPassword(target.value)} value={password} required/>
-          <Link className='text-xs font-medium capitalize inline-block' to='/reset'>
-            forgot your password?
-          </Link>
-        </AuthForm>
-      </BlurCard>
-    </div>
-
+    <Auth title='sign in' imageSrc={woman} onSubmit={handleSubmit}>
+      <Input type='text' placeholder='username' icon={<GiPostStamp size={30}/>} onChange={({target}) => setUser(target.value)} value={user} required/>
+      <Input type='password' placeholder='password' icon={<GiUnlocking size={30}/>} onChange={({target}) => setPassword(target.value)} value={password} required/>
+      <Link className='inline-block text-xs font-medium capitalize' to='/reset'>
+        forgot your password?
+      </Link>
+      <SocialBox text="or login with"/>
+      <Button>sign in</Button>
+      <div>
+        <small className='inline-block'>don't have an account ?</small> <Link to='/register' className='font-bold text-sm'>Register here</Link>
+      </div>
+    </Auth>
   )
 }
