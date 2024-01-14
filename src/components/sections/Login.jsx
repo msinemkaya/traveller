@@ -7,6 +7,7 @@ import { GiPostStamp, GiUnlocking } from "react-icons/gi";
 import { SocialBox } from '../common/SocialBox.jsx'
 import { Auth } from './Auth.jsx'
 import { Button } from '../common/Button.jsx'
+import { AuthRedirection } from '../common/AuthRedirection.jsx'
 
 export function Login() {
   const { setAuth } = useAuth()
@@ -30,9 +31,7 @@ export function Login() {
       </Link>
       <SocialBox text="or login with"/>
       <Button>sign in</Button>
-      <div>
-        <small className='inline-block'>don't have an account ?</small> <Link to='/register' className='font-bold text-sm'>Register here</Link>
-      </div>
+      <AuthRedirection type='register'/>
     </Auth>
   )
 }
