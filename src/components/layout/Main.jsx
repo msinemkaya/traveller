@@ -1,4 +1,4 @@
-import { Hero } from './Hero.jsx'
+import { Hero } from '../sections/Hero.jsx'
 export function Main() {
   return (
     <main>
