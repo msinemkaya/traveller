@@ -6,8 +6,12 @@
 @tailwind utilities;
 @font-face {font-family:"JK Abode Light Demo";src:url("assets/font/JKAbode-LightDemo.eot?") format("eot"),url("assets/font/JKAbode-LightDemo.woff") format("woff"),url("assets/font/JKAbode-LightDemo.ttf") format("truetype"),url("assets/font/JKAbode-LightDemo.svg#JKAbode-LightDemo") format("svg");}
 
+body {
+    @apply h-full
+}
+
 #root {
-    @apply min-h-svh p-0 m-0 font-monserrat bg-dark/70 min-w-full text-primary
+    @apply min-h-svh h-full p-0 m-0 font-monserrat bg-dark/70 min-w-full text-primary
 }
 
 .auth {
