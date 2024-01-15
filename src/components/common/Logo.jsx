@@ -1,5 +1,5 @@
 export function Logo() {
   return (
-    <div className='text-indigo-750 font-abode font-bold text-2xl'>traveller</div>
+    <div className='text-3xl font-bold text-indigo-750 font-abode'>traveller</div>
   )
 }

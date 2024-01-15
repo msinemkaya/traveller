@@ -8,7 +8,7 @@ export function NavBar() {
   const {auth} = useAuth()
 
   return (
-    <nav className='z-20 absolute inset-0 flex items-center justify-between w-11/12 mx-auto h-14'>
+    <nav className='absolute inset-0 z-20 mx-auto flex h-14 w-11/12 items-center justify-between'>
       <Logo/>
       {!auth?.user ? (
         <div className='space-x-5'>

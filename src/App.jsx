@@ -15,6 +15,7 @@ function App() {
         <Route path='/' element={<Main/>}/>
         <Route element={<RequireAuth/>}>
           {/*todo: post routes*/}
+          <Route path='/posts/*'/>
         </Route>
       </Route>
       <Route path='/login' element={<Login/>}/>

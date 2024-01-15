@@ -5,7 +5,7 @@ import { NavBar } from './NavBar.jsx'
 export function Layout() {
   const { auth } = useAuth()
   return (
-    <div className='min-h-svh flex flex-col relative'>
+    <div className='relative flex flex-col min-h-svh'>
 
       <NavBar/>
 
@@ -15,7 +15,7 @@ export function Layout() {
         </div>
 
         {auth?.user ? (
-          <div className='basis-1/4 min-w-0 z-30'>
+          <div className='z-30 min-w-0 basis-1/4'>
             {/*todo: sidebar'a vision board, user, log out konacak*/}
             sidebar
           </div> ) : null
